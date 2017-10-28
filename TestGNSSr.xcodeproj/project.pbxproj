@@ -1,0 +1,559 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E8650D411FA40495007561FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D401FA40495007561FF /* AppDelegate.m */; };
+		E8650D441FA40495007561FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D431FA40495007561FF /* ViewController.m */; };
+		E8650D471FA40495007561FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8650D451FA40495007561FF /* Main.storyboard */; };
+		E8650D491FA40495007561FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8650D481FA40495007561FF /* Assets.xcassets */; };
+		E8650D4C1FA40495007561FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8650D4A1FA40495007561FF /* LaunchScreen.storyboard */; };
+		E8650D4F1FA40495007561FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D4E1FA40495007561FF /* main.m */; };
+		E8650D591FA40495007561FF /* TestGNSSrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D581FA40495007561FF /* TestGNSSrTests.m */; };
+		E8650D641FA40495007561FF /* TestGNSSrUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D631FA40495007561FF /* TestGNSSrUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E8650D551FA40495007561FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8650D341FA40495007561FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8650D3B1FA40495007561FF;
+			remoteInfo = TestGNSSr;
+		};
+		E8650D601FA40495007561FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8650D341FA40495007561FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8650D3B1FA40495007561FF;
+			remoteInfo = TestGNSSr;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E8650D3C1FA40495007561FF /* TestGNSSr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestGNSSr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8650D3F1FA40495007561FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E8650D401FA40495007561FF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E8650D421FA40495007561FF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E8650D431FA40495007561FF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E8650D461FA40495007561FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E8650D481FA40495007561FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8650D4B1FA40495007561FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E8650D4D1FA40495007561FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8650D4E1FA40495007561FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E8650D541FA40495007561FF /* TestGNSSrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestGNSSrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8650D581FA40495007561FF /* TestGNSSrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestGNSSrTests.m; sourceTree = "<group>"; };
+		E8650D5A1FA40495007561FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8650D5F1FA40495007561FF /* TestGNSSrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestGNSSrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8650D631FA40495007561FF /* TestGNSSrUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestGNSSrUITests.m; sourceTree = "<group>"; };
+		E8650D651FA40495007561FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8650D391FA40495007561FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8650D511FA40495007561FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8650D5C1FA40495007561FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E8650D331FA40495007561FF = {
+			isa = PBXGroup;
+			children = (
+				E8650D3E1FA40495007561FF /* TestGNSSr */,
+				E8650D571FA40495007561FF /* TestGNSSrTests */,
+				E8650D621FA40495007561FF /* TestGNSSrUITests */,
+				E8650D3D1FA40495007561FF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E8650D3D1FA40495007561FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8650D3C1FA40495007561FF /* TestGNSSr.app */,
+				E8650D541FA40495007561FF /* TestGNSSrTests.xctest */,
+				E8650D5F1FA40495007561FF /* TestGNSSrUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8650D3E1FA40495007561FF /* TestGNSSr */ = {
+			isa = PBXGroup;
+			children = (
+				E8650D3F1FA40495007561FF /* AppDelegate.h */,
+				E8650D401FA40495007561FF /* AppDelegate.m */,
+				E8650D421FA40495007561FF /* ViewController.h */,
+				E8650D431FA40495007561FF /* ViewController.m */,
+				E8650D451FA40495007561FF /* Main.storyboard */,
+				E8650D481FA40495007561FF /* Assets.xcassets */,
+				E8650D4A1FA40495007561FF /* LaunchScreen.storyboard */,
+				E8650D4D1FA40495007561FF /* Info.plist */,
+				E8650D4E1FA40495007561FF /* main.m */,
+			);
+			path = TestGNSSr;
+			sourceTree = "<group>";
+		};
+		E8650D571FA40495007561FF /* TestGNSSrTests */ = {
+			isa = PBXGroup;
+			children = (
+				E8650D581FA40495007561FF /* TestGNSSrTests.m */,
+				E8650D5A1FA40495007561FF /* Info.plist */,
+			);
+			path = TestGNSSrTests;
+			sourceTree = "<group>";
+		};
+		E8650D621FA40495007561FF /* TestGNSSrUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E8650D631FA40495007561FF /* TestGNSSrUITests.m */,
+				E8650D651FA40495007561FF /* Info.plist */,
+			);
+			path = TestGNSSrUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8650D3B1FA40495007561FF /* TestGNSSr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8650D681FA40495007561FF /* Build configuration list for PBXNativeTarget "TestGNSSr" */;
+			buildPhases = (
+				E8650D381FA40495007561FF /* Sources */,
+				E8650D391FA40495007561FF /* Frameworks */,
+				E8650D3A1FA40495007561FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestGNSSr;
+			productName = TestGNSSr;
+			productReference = E8650D3C1FA40495007561FF /* TestGNSSr.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E8650D531FA40495007561FF /* TestGNSSrTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8650D6B1FA40495007561FF /* Build configuration list for PBXNativeTarget "TestGNSSrTests" */;
+			buildPhases = (
+				E8650D501FA40495007561FF /* Sources */,
+				E8650D511FA40495007561FF /* Frameworks */,
+				E8650D521FA40495007561FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8650D561FA40495007561FF /* PBXTargetDependency */,
+			);
+			name = TestGNSSrTests;
+			productName = TestGNSSrTests;
+			productReference = E8650D541FA40495007561FF /* TestGNSSrTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E8650D5E1FA40495007561FF /* TestGNSSrUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8650D6E1FA40495007561FF /* Build configuration list for PBXNativeTarget "TestGNSSrUITests" */;
+			buildPhases = (
+				E8650D5B1FA40495007561FF /* Sources */,
+				E8650D5C1FA40495007561FF /* Frameworks */,
+				E8650D5D1FA40495007561FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8650D611FA40495007561FF /* PBXTargetDependency */,
+			);
+			name = TestGNSSrUITests;
+			productName = TestGNSSrUITests;
+			productReference = E8650D5F1FA40495007561FF /* TestGNSSrUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8650D341FA40495007561FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Edwin Groothuis";
+				TargetAttributes = {
+					E8650D3B1FA40495007561FF = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+					E8650D531FA40495007561FF = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E8650D3B1FA40495007561FF;
+					};
+					E8650D5E1FA40495007561FF = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E8650D3B1FA40495007561FF;
+					};
+				};
+			};
+			buildConfigurationList = E8650D371FA40495007561FF /* Build configuration list for PBXProject "TestGNSSr" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E8650D331FA40495007561FF;
+			productRefGroup = E8650D3D1FA40495007561FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8650D3B1FA40495007561FF /* TestGNSSr */,
+				E8650D531FA40495007561FF /* TestGNSSrTests */,
+				E8650D5E1FA40495007561FF /* TestGNSSrUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8650D3A1FA40495007561FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8650D4C1FA40495007561FF /* LaunchScreen.storyboard in Resources */,
+				E8650D491FA40495007561FF /* Assets.xcassets in Resources */,
+				E8650D471FA40495007561FF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8650D521FA40495007561FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8650D5D1FA40495007561FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8650D381FA40495007561FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8650D441FA40495007561FF /* ViewController.m in Sources */,
+				E8650D4F1FA40495007561FF /* main.m in Sources */,
+				E8650D411FA40495007561FF /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8650D501FA40495007561FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8650D591FA40495007561FF /* TestGNSSrTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8650D5B1FA40495007561FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8650D641FA40495007561FF /* TestGNSSrUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E8650D561FA40495007561FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8650D3B1FA40495007561FF /* TestGNSSr */;
+			targetProxy = E8650D551FA40495007561FF /* PBXContainerItemProxy */;
+		};
+		E8650D611FA40495007561FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8650D3B1FA40495007561FF /* TestGNSSr */;
+			targetProxy = E8650D601FA40495007561FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E8650D451FA40495007561FF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8650D461FA40495007561FF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E8650D4A1FA40495007561FF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8650D4B1FA40495007561FF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E8650D661FA40495007561FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E8650D671FA40495007561FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8650D691FA40495007561FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NRQ2A5FE8M;
+				INFOPLIST_FILE = TestGNSSr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.mavetju.TestGNSSr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E8650D6A1FA40495007561FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NRQ2A5FE8M;
+				INFOPLIST_FILE = TestGNSSr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.mavetju.TestGNSSr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E8650D6C1FA40495007561FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NRQ2A5FE8M;
+				INFOPLIST_FILE = TestGNSSrTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.mavetju.TestGNSSrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestGNSSr.app/TestGNSSr";
+			};
+			name = Debug;
+		};
+		E8650D6D1FA40495007561FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NRQ2A5FE8M;
+				INFOPLIST_FILE = TestGNSSrTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.mavetju.TestGNSSrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestGNSSr.app/TestGNSSr";
+			};
+			name = Release;
+		};
+		E8650D6F1FA40495007561FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NRQ2A5FE8M;
+				INFOPLIST_FILE = TestGNSSrUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.mavetju.TestGNSSrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TestGNSSr;
+			};
+			name = Debug;
+		};
+		E8650D701FA40495007561FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NRQ2A5FE8M;
+				INFOPLIST_FILE = TestGNSSrUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.mavetju.TestGNSSrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TestGNSSr;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8650D371FA40495007561FF /* Build configuration list for PBXProject "TestGNSSr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8650D661FA40495007561FF /* Debug */,
+				E8650D671FA40495007561FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8650D681FA40495007561FF /* Build configuration list for PBXNativeTarget "TestGNSSr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8650D691FA40495007561FF /* Debug */,
+				E8650D6A1FA40495007561FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8650D6B1FA40495007561FF /* Build configuration list for PBXNativeTarget "TestGNSSrTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8650D6C1FA40495007561FF /* Debug */,
+				E8650D6D1FA40495007561FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8650D6E1FA40495007561FF /* Build configuration list for PBXNativeTarget "TestGNSSrUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8650D6F1FA40495007561FF /* Debug */,
+				E8650D701FA40495007561FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E8650D341FA40495007561FF /* Project object */;
+}
