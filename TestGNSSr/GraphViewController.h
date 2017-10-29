@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  GraphViewController.h
 //  TestGNSSr
 //
 //  Created by Edwin Groothuis on 28/10/17.
@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController <CLLocationManagerDelegate>
+@interface GraphViewController : UIViewController
 
 @end
-

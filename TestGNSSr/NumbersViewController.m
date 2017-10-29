@@ -6,35 +6,31 @@
 //  Copyright © 2017 Edwin Groothuis. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "NumbersViewController.h"
+#import "Tools.h"
 
-@interface ViewController ()
+@interface NumbersViewController () <ToolsDelegate>
 
 @property (nonatomic, retain) UILabel *labelH, *labelMinH, *labelMaxH, *labelDeltaH;
 @property (nonatomic, retain) UILabel *labelLon, *labelMinLon, *labelMaxLon, *labelDeltaLon, *labelDeltaLonM;
 @property (nonatomic, retain) UILabel *labelLat, *labelMinLat, *labelMaxLat, *labelDeltaLat, *labelDeltaLatM;
 @property (nonatomic, retain) UILabel *labelClock, *labelStart;
 @property (nonatomic, retain) UILabel *labelAccuracy;
-@property (nonatomic, retain) CLLocationManager *LM;
 @property (nonatomic, retain) NSDateFormatter *dateFormatter;
 @property (nonatomic        ) CLLocationDistance h, minH, maxH, deltaH;
 @property (nonatomic        ) CLLocationDegrees lat, minLat, maxLat, deltaLat;
 @property (nonatomic        ) CLLocationDistance lon, minLon, maxLon, deltaLon;
+@property (nonatomic        ) CLLocationDistance horizontalAccuracy;
 
 @end
 
-@implementation ViewController
+@implementation NumbersViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view, typically from a nib.
-
-    self.LM = [[CLLocationManager alloc] init];
-    [self.LM  requestWhenInUseAuthorization ];
-    self.LM.distanceFilter = kCLDistanceFilterNone;
-    self.LM.desiredAccuracy = kCLLocationAccuracyBest;
-    self.LM.delegate = self;
-    [self.LM startUpdatingLocation];
 
     NSTimeZone *tz = [NSTimeZone localTimeZone];
     self.dateFormatter = [[NSDateFormatter alloc] init];
@@ -114,7 +110,17 @@
     y += b.frame.size.height;
     y += 20;
 
+    self.labelStart.text = [NSString stringWithFormat:@"Time started: %@", [self.dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:time(NULL)]]];
+}
+
+- (instancetype)init
+{
+    self = [super init];
+
     [self valuesRestart];
+    [tools addDelegate:self];
+
+    return self;
 }
 
 - (void)valuesRestart
@@ -128,78 +134,57 @@
     self.maxH = -1000000;
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
+- (void)didUpdateLocation:(CLLocation *)location;
 {
-    [locations enumerateObjectsUsingBlock:^(CLLocation * _Nonnull location, NSUInteger idx, BOOL * _Nonnull stop) {
-        self.lat = location.coordinate.latitude;
-        self.minLat = MIN(self.lat, self.minLat);
-        self.maxLat = MAX(self.lat, self.maxLat);
-        self.deltaLat = self.maxLat - self.minLat;
+    self.lat = location.coordinate.latitude;
+    self.minLat = MIN(self.lat, self.minLat);
+    self.maxLat = MAX(self.lat, self.maxLat);
+    self.deltaLat = self.maxLat - self.minLat;
 
-        self.lon = location.coordinate.longitude;
-        self.minLon = MIN(self.lon, self.minLon);
-        self.maxLon = MAX(self.lon, self.maxLon);
-        self.deltaLon = self.maxLon - self.minLon;
+    self.lon = location.coordinate.longitude;
+    self.minLon = MIN(self.lon, self.minLon);
+    self.maxLon = MAX(self.lon, self.maxLon);
+    self.deltaLon = self.maxLon - self.minLon;
 
-        self.h = location.altitude;
-        self.minH = MIN(self.h, self.minH);
-        self.maxH = MAX(self.h, self.maxH);
-        self.deltaH = self.maxH - self.minH;
+    self.h = location.altitude;
+    self.minH = MIN(self.h, self.minH);
+    self.maxH = MAX(self.h, self.maxH);
+    self.deltaH = self.maxH - self.minH;
 
+    self.horizontalAccuracy = location.horizontalAccuracy;
 
-        [self show];
-    }];
+    [self show];
 }
 
 - (void)show
 {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         self.labelClock.text = [NSString stringWithFormat:@"Last update: %@", [self.dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:time(NULL)]]];
-        self.labelAccuracy.text = [NSString stringWithFormat:@"Accuracy: %f", self.LM.location.horizontalAccuracy];
+        self.labelAccuracy.text = [NSString stringWithFormat:@"Accuracy: %0.10f meters", self.horizontalAccuracy];
 
+        self.labelLat.text = [NSString stringWithFormat:@"Lat: %0.10f degrees", self.lat];
+        self.labelMinLat.text = [NSString stringWithFormat:@"minLat: %0.10f degrees", self.minLat];
+        self.labelMaxLat.text = [NSString stringWithFormat:@"maxLat: %0.10f degrees", self.maxLat];
+        self.labelDeltaLat.text = [NSString stringWithFormat:@"DeltaLat: %0.10f degrees", self.deltaLat];
+        self.labelDeltaLatM.text = [NSString stringWithFormat:@"DeltaLat: %0.10f meters",
+                                    [Tools coordinates2distance:CLLocationCoordinate2DMake(self.minLat, self.minLon)
+                                                             to:CLLocationCoordinate2DMake(self.maxLat, self.minLon)]];
 
-        self.labelLat.text = [NSString stringWithFormat:@"Lat: %f degrees", self.lat];
-        self.labelMinLat.text = [NSString stringWithFormat:@"minLat: %f degrees", self.minLat];
-        self.labelMaxLat.text = [NSString stringWithFormat:@"maxLat: %f degrees", self.maxLat];
-        self.labelDeltaLat.text = [NSString stringWithFormat:@"DeltaLat: %f degrees", self.deltaLat];
-        self.labelDeltaLatM.text = [NSString stringWithFormat:@"DeltaLat: %f meters",
-                                   [self coordinates2distance:CLLocationCoordinate2DMake(self.minLat, self.minLon)
-                                                           to:CLLocationCoordinate2DMake(self.maxLat, self.minLon)]];
+        self.labelLon.text = [NSString stringWithFormat:@"Lon: %0.10f degrees", self.lon];
+        self.labelMinLon.text = [NSString stringWithFormat:@"minLon: %0.10f degrees", self.minLon];
+        self.labelMaxLon.text = [NSString stringWithFormat:@"maxLon: %0.10f degrees", self.maxLon];
+        self.labelDeltaLon.text = [NSString stringWithFormat:@"DeltaLon: %0.10f degrees", self.deltaLon];
+        self.labelDeltaLonM.text = [NSString stringWithFormat:@"DeltaLon: %0.10f meters",
+                                    [Tools coordinates2distance:CLLocationCoordinate2DMake(self.minLat, self.minLon)
+                                                             to:CLLocationCoordinate2DMake(self.minLat, self.maxLon)]];
 
-        self.labelLon.text = [NSString stringWithFormat:@"Lon: %f degrees", self.lon];
-        self.labelMinLon.text = [NSString stringWithFormat:@"minLon: %f degrees", self.minLon];
-        self.labelMaxLon.text = [NSString stringWithFormat:@"maxLon: %f degrees", self.maxLon];
-        self.labelDeltaLon.text = [NSString stringWithFormat:@"DeltaLon: %f degrees", self.deltaLon];
-        self.labelDeltaLonM.text = [NSString stringWithFormat:@"DeltaLat: %f meters",
-                                   [self coordinates2distance:CLLocationCoordinate2DMake(self.minLat, self.minLon)
-                                                           to:CLLocationCoordinate2DMake(self.minLat, self.maxLon)]];
-
-        self.labelH.text = [NSString stringWithFormat:@"H: %f meters", self.h];
-        self.labelMinH.text = [NSString stringWithFormat:@"minH: %f meters", self.minH];
-        self.labelMaxH.text = [NSString stringWithFormat:@"maxH: %f meters", self.maxH];
-        self.labelDeltaH.text = [NSString stringWithFormat:@"DeltaH: %f meters", self.deltaH];
+        self.labelH.text = [NSString stringWithFormat:@"Height: %f meters", self.h];
+        self.labelMinH.text = [NSString stringWithFormat:@"minHeight: %f meters", self.minH];
+        self.labelMaxH.text = [NSString stringWithFormat:@"maxHeight: %f meters", self.maxH];
+        self.labelDeltaH.text = [NSString stringWithFormat:@"DeltaHeight: %f meters", self.deltaH];
     }];
 }
 
-- (CLLocationDegrees)toRadians:(CLLocationDegrees)f
-{
-    return f * M_PI / 180;
-}
 
-- (float)coordinates2distance:(CLLocationCoordinate2D)c1 to:(CLLocationCoordinate2D)c2
-{
-    // From http://www.movable-type.co.uk/scripts/latlong.html
-    float R = 6371000; // radius of Earth in metres
-    float φ1 = [self toRadians:c1.latitude];
-    float φ2 = [self toRadians:c2.latitude];
-    float Δφ = [self toRadians:c2.latitude - c1.latitude];
-    float Δλ = [self toRadians:c2.longitude - c1.longitude];
-
-    float a = sin(Δφ / 2) * sin(Δφ / 2) + cos(φ1) * cos(φ2) * sin(Δλ / 2) * sin(Δλ / 2);
-    float c = 2 * atan2(sqrt(a), sqrt(1 - a));
-
-    float d = R * c;
-    return d;
-}
 
 @end

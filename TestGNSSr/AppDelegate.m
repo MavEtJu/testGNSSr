@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "NumbersViewController.h"
+#import "GraphViewController.h"
+#import "Tools.h"
+
+Tools *tools;
 
 @interface AppDelegate ()
 
@@ -14,11 +19,28 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    tools = [[Tools alloc] init];
+
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    NumbersViewController *vc1 = [[NumbersViewController alloc] init];
+    vc1.tabBarItem.title = @"Numbers";
+    GraphViewController *vc2 = [[GraphViewController alloc] init];
+    vc2.tabBarItem.title = @"Graph";
+
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    NSArray *controllers = [NSArray arrayWithObjects:vc1, vc2, nil];
+    tabBarController.viewControllers = controllers;
+    self.window.rootViewController = tabBarController;
+
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

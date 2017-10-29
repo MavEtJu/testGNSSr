@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		E8650D411FA40495007561FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D401FA40495007561FF /* AppDelegate.m */; };
-		E8650D441FA40495007561FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D431FA40495007561FF /* ViewController.m */; };
+		E8650D441FA40495007561FF /* NumbersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D431FA40495007561FF /* NumbersViewController.m */; };
 		E8650D471FA40495007561FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8650D451FA40495007561FF /* Main.storyboard */; };
 		E8650D491FA40495007561FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8650D481FA40495007561FF /* Assets.xcassets */; };
 		E8650D4C1FA40495007561FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8650D4A1FA40495007561FF /* LaunchScreen.storyboard */; };
 		E8650D4F1FA40495007561FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D4E1FA40495007561FF /* main.m */; };
 		E8650D591FA40495007561FF /* TestGNSSrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D581FA40495007561FF /* TestGNSSrTests.m */; };
 		E8650D641FA40495007561FF /* TestGNSSrUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D631FA40495007561FF /* TestGNSSrUITests.m */; };
+		E8650D731FA4359A007561FF /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D721FA4359A007561FF /* GraphViewController.m */; };
+		E8650D761FA436CE007561FF /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D751FA436CE007561FF /* Tools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +40,8 @@
 		E8650D3C1FA40495007561FF /* TestGNSSr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestGNSSr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8650D3F1FA40495007561FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E8650D401FA40495007561FF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E8650D421FA40495007561FF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E8650D431FA40495007561FF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E8650D421FA40495007561FF /* NumbersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NumbersViewController.h; sourceTree = "<group>"; };
+		E8650D431FA40495007561FF /* NumbersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NumbersViewController.m; sourceTree = "<group>"; };
 		E8650D461FA40495007561FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8650D481FA40495007561FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8650D4B1FA40495007561FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +53,10 @@
 		E8650D5F1FA40495007561FF /* TestGNSSrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestGNSSrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8650D631FA40495007561FF /* TestGNSSrUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestGNSSrUITests.m; sourceTree = "<group>"; };
 		E8650D651FA40495007561FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8650D711FA4359A007561FF /* GraphViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
+		E8650D721FA4359A007561FF /* GraphViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
+		E8650D741FA436CE007561FF /* Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		E8650D751FA436CE007561FF /* Tools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +109,12 @@
 			children = (
 				E8650D3F1FA40495007561FF /* AppDelegate.h */,
 				E8650D401FA40495007561FF /* AppDelegate.m */,
-				E8650D421FA40495007561FF /* ViewController.h */,
-				E8650D431FA40495007561FF /* ViewController.m */,
+				E8650D741FA436CE007561FF /* Tools.h */,
+				E8650D751FA436CE007561FF /* Tools.m */,
+				E8650D421FA40495007561FF /* NumbersViewController.h */,
+				E8650D431FA40495007561FF /* NumbersViewController.m */,
+				E8650D711FA4359A007561FF /* GraphViewController.h */,
+				E8650D721FA4359A007561FF /* GraphViewController.m */,
 				E8650D451FA40495007561FF /* Main.storyboard */,
 				E8650D481FA40495007561FF /* Assets.xcassets */,
 				E8650D4A1FA40495007561FF /* LaunchScreen.storyboard */,
@@ -265,7 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8650D441FA40495007561FF /* ViewController.m in Sources */,
+				E8650D441FA40495007561FF /* NumbersViewController.m in Sources */,
+				E8650D761FA436CE007561FF /* Tools.m in Sources */,
+				E8650D731FA4359A007561FF /* GraphViewController.m in Sources */,
 				E8650D4F1FA40495007561FF /* main.m in Sources */,
 				E8650D411FA40495007561FF /* AppDelegate.m in Sources */,
 			);
