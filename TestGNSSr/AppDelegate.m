@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "NumbersViewController.h"
 #import "GraphViewController.h"
+#import "HelpViewController.h"
 #import "Tools.h"
 
 Tools *tools;
@@ -19,8 +20,8 @@ Tools *tools;
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
     tools = [[Tools alloc] init];
 
     // Override point for customization after application launch.
@@ -30,9 +31,11 @@ Tools *tools;
     vc1.tabBarItem.title = @"Numbers";
     GraphViewController *vc2 = [[GraphViewController alloc] init];
     vc2.tabBarItem.title = @"Graph";
+    HelpViewController *vc3 = [[HelpViewController alloc] init];
+    vc3.tabBarItem.title = @"Help";
 
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    NSArray *controllers = [NSArray arrayWithObjects:vc1, vc2, nil];
+    NSArray *controllers = [NSArray arrayWithObjects:vc1, vc2, vc3, nil];
     tabBarController.viewControllers = controllers;
     self.window.rootViewController = tabBarController;
 

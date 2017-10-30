@@ -13,29 +13,11 @@
 		E8650D491FA40495007561FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8650D481FA40495007561FF /* Assets.xcassets */; };
 		E8650D4C1FA40495007561FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8650D4A1FA40495007561FF /* LaunchScreen.storyboard */; };
 		E8650D4F1FA40495007561FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D4E1FA40495007561FF /* main.m */; };
-		E8650D591FA40495007561FF /* TestGNSSrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D581FA40495007561FF /* TestGNSSrTests.m */; };
-		E8650D641FA40495007561FF /* TestGNSSrUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D631FA40495007561FF /* TestGNSSrUITests.m */; };
 		E8650D731FA4359A007561FF /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D721FA4359A007561FF /* GraphViewController.m */; };
 		E8650D761FA436CE007561FF /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D751FA436CE007561FF /* Tools.m */; };
 		E8650D791FA6CA9B007561FF /* Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D781FA6CA9B007561FF /* Coordinate.m */; };
+		E8650D7C1FA74489007561FF /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8650D7B1FA74489007561FF /* HelpViewController.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E8650D551FA40495007561FF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E8650D341FA40495007561FF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E8650D3B1FA40495007561FF;
-			remoteInfo = TestGNSSr;
-		};
-		E8650D601FA40495007561FF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E8650D341FA40495007561FF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E8650D3B1FA40495007561FF;
-			remoteInfo = TestGNSSr;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E8650D3C1FA40495007561FF /* TestGNSSr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestGNSSr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,36 +30,18 @@
 		E8650D4B1FA40495007561FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8650D4D1FA40495007561FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8650D4E1FA40495007561FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E8650D541FA40495007561FF /* TestGNSSrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestGNSSrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8650D581FA40495007561FF /* TestGNSSrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestGNSSrTests.m; sourceTree = "<group>"; };
-		E8650D5A1FA40495007561FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E8650D5F1FA40495007561FF /* TestGNSSrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestGNSSrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8650D631FA40495007561FF /* TestGNSSrUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestGNSSrUITests.m; sourceTree = "<group>"; };
-		E8650D651FA40495007561FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8650D711FA4359A007561FF /* GraphViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
 		E8650D721FA4359A007561FF /* GraphViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
 		E8650D741FA436CE007561FF /* Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		E8650D751FA436CE007561FF /* Tools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		E8650D771FA6CA9B007561FF /* Coordinate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinate.h; sourceTree = "<group>"; };
 		E8650D781FA6CA9B007561FF /* Coordinate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Coordinate.m; sourceTree = "<group>"; };
+		E8650D7A1FA74489007561FF /* HelpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		E8650D7B1FA74489007561FF /* HelpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E8650D391FA40495007561FF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E8650D511FA40495007561FF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E8650D5C1FA40495007561FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -91,8 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				E8650D3E1FA40495007561FF /* TestGNSSr */,
-				E8650D571FA40495007561FF /* TestGNSSrTests */,
-				E8650D621FA40495007561FF /* TestGNSSrUITests */,
 				E8650D3D1FA40495007561FF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,8 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				E8650D3C1FA40495007561FF /* TestGNSSr.app */,
-				E8650D541FA40495007561FF /* TestGNSSrTests.xctest */,
-				E8650D5F1FA40495007561FF /* TestGNSSrUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +80,8 @@
 				E8650D431FA40495007561FF /* NumbersViewController.m */,
 				E8650D711FA4359A007561FF /* GraphViewController.h */,
 				E8650D721FA4359A007561FF /* GraphViewController.m */,
+				E8650D7A1FA74489007561FF /* HelpViewController.h */,
+				E8650D7B1FA74489007561FF /* HelpViewController.m */,
 				E8650D451FA40495007561FF /* Main.storyboard */,
 				E8650D481FA40495007561FF /* Assets.xcassets */,
 				E8650D4A1FA40495007561FF /* LaunchScreen.storyboard */,
@@ -127,24 +89,6 @@
 				E8650D4E1FA40495007561FF /* main.m */,
 			);
 			path = TestGNSSr;
-			sourceTree = "<group>";
-		};
-		E8650D571FA40495007561FF /* TestGNSSrTests */ = {
-			isa = PBXGroup;
-			children = (
-				E8650D581FA40495007561FF /* TestGNSSrTests.m */,
-				E8650D5A1FA40495007561FF /* Info.plist */,
-			);
-			path = TestGNSSrTests;
-			sourceTree = "<group>";
-		};
-		E8650D621FA40495007561FF /* TestGNSSrUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E8650D631FA40495007561FF /* TestGNSSrUITests.m */,
-				E8650D651FA40495007561FF /* Info.plist */,
-			);
-			path = TestGNSSrUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,42 +111,6 @@
 			productReference = E8650D3C1FA40495007561FF /* TestGNSSr.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E8650D531FA40495007561FF /* TestGNSSrTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E8650D6B1FA40495007561FF /* Build configuration list for PBXNativeTarget "TestGNSSrTests" */;
-			buildPhases = (
-				E8650D501FA40495007561FF /* Sources */,
-				E8650D511FA40495007561FF /* Frameworks */,
-				E8650D521FA40495007561FF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E8650D561FA40495007561FF /* PBXTargetDependency */,
-			);
-			name = TestGNSSrTests;
-			productName = TestGNSSrTests;
-			productReference = E8650D541FA40495007561FF /* TestGNSSrTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		E8650D5E1FA40495007561FF /* TestGNSSrUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E8650D6E1FA40495007561FF /* Build configuration list for PBXNativeTarget "TestGNSSrUITests" */;
-			buildPhases = (
-				E8650D5B1FA40495007561FF /* Sources */,
-				E8650D5C1FA40495007561FF /* Frameworks */,
-				E8650D5D1FA40495007561FF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E8650D611FA40495007561FF /* PBXTargetDependency */,
-			);
-			name = TestGNSSrUITests;
-			productName = TestGNSSrUITests;
-			productReference = E8650D5F1FA40495007561FF /* TestGNSSrUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -215,16 +123,6 @@
 					E8650D3B1FA40495007561FF = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
-					};
-					E8650D531FA40495007561FF = {
-						CreatedOnToolsVersion = 9.0.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = E8650D3B1FA40495007561FF;
-					};
-					E8650D5E1FA40495007561FF = {
-						CreatedOnToolsVersion = 9.0.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = E8650D3B1FA40495007561FF;
 					};
 				};
 			};
@@ -242,8 +140,6 @@
 			projectRoot = "";
 			targets = (
 				E8650D3B1FA40495007561FF /* TestGNSSr */,
-				E8650D531FA40495007561FF /* TestGNSSrTests */,
-				E8650D5E1FA40495007561FF /* TestGNSSrUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -259,20 +155,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E8650D521FA40495007561FF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E8650D5D1FA40495007561FF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -284,41 +166,13 @@
 				E8650D791FA6CA9B007561FF /* Coordinate.m in Sources */,
 				E8650D761FA436CE007561FF /* Tools.m in Sources */,
 				E8650D731FA4359A007561FF /* GraphViewController.m in Sources */,
+				E8650D7C1FA74489007561FF /* HelpViewController.m in Sources */,
 				E8650D4F1FA40495007561FF /* main.m in Sources */,
 				E8650D411FA40495007561FF /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E8650D501FA40495007561FF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E8650D591FA40495007561FF /* TestGNSSrTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E8650D5B1FA40495007561FF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E8650D641FA40495007561FF /* TestGNSSrUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E8650D561FA40495007561FF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E8650D3B1FA40495007561FF /* TestGNSSr */;
-			targetProxy = E8650D551FA40495007561FF /* PBXContainerItemProxy */;
-		};
-		E8650D611FA40495007561FF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E8650D3B1FA40495007561FF /* TestGNSSr */;
-			targetProxy = E8650D601FA40495007561FF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E8650D451FA40495007561FF /* Main.storyboard */ = {
@@ -474,64 +328,6 @@
 			};
 			name = Release;
 		};
-		E8650D6C1FA40495007561FF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NRQ2A5FE8M;
-				INFOPLIST_FILE = TestGNSSrTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.mavetju.TestGNSSrTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestGNSSr.app/TestGNSSr";
-			};
-			name = Debug;
-		};
-		E8650D6D1FA40495007561FF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NRQ2A5FE8M;
-				INFOPLIST_FILE = TestGNSSrTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.mavetju.TestGNSSrTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestGNSSr.app/TestGNSSr";
-			};
-			name = Release;
-		};
-		E8650D6F1FA40495007561FF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NRQ2A5FE8M;
-				INFOPLIST_FILE = TestGNSSrUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.mavetju.TestGNSSrUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TestGNSSr;
-			};
-			name = Debug;
-		};
-		E8650D701FA40495007561FF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NRQ2A5FE8M;
-				INFOPLIST_FILE = TestGNSSrUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.mavetju.TestGNSSrUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TestGNSSr;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -549,24 +345,6 @@
 			buildConfigurations = (
 				E8650D691FA40495007561FF /* Debug */,
 				E8650D6A1FA40495007561FF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E8650D6B1FA40495007561FF /* Build configuration list for PBXNativeTarget "TestGNSSrTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E8650D6C1FA40495007561FF /* Debug */,
-				E8650D6D1FA40495007561FF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E8650D6E1FA40495007561FF /* Build configuration list for PBXNativeTarget "TestGNSSrUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E8650D6F1FA40495007561FF /* Debug */,
-				E8650D701FA40495007561FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
