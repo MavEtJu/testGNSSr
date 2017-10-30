@@ -20,6 +20,7 @@
 - (void)addDelegate:(id<ToolsDelegate>)d;
 
 + (float)coordinates2distance:(CLLocationCoordinate2D)c1 to:(CLLocationCoordinate2D)c2;
++ (NSString *)coordinate:(CLLocationDegrees)ll;
 
 @end
 

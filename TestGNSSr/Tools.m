@@ -69,4 +69,12 @@
     return d;
 }
 
++ (NSString *)coordinate:(CLLocationDegrees)ll
+{
+    float dummy;
+    int degrees = (int)fabs(ll);
+    float mins = modff(fabs(ll), &dummy);
+    return [NSString stringWithFormat:@"%d° %03.10f", degrees, mins * 60];
+}
+
 @end

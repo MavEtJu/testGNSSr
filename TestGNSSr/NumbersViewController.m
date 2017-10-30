@@ -12,8 +12,8 @@
 @interface NumbersViewController () <ToolsDelegate>
 
 @property (nonatomic, retain) UILabel *labelH, *labelMinH, *labelMaxH, *labelDeltaH;
-@property (nonatomic, retain) UILabel *labelLon, *labelMinLon, *labelMaxLon, *labelDeltaLon, *labelDeltaLonM;
-@property (nonatomic, retain) UILabel *labelLat, *labelMinLat, *labelMaxLat, *labelDeltaLat, *labelDeltaLatM;
+@property (nonatomic, retain) UILabel *labelLon, *labelMinLon, *labelMaxLon, *labelDeltaLon, *labelDeltaLonM, *labelDeltaLonD;
+@property (nonatomic, retain) UILabel *labelLat, *labelMinLat, *labelMaxLat, *labelDeltaLat, *labelDeltaLatM, *labelDeltaLatD;
 @property (nonatomic, retain) UILabel *labelClock, *labelStart;
 @property (nonatomic, retain) UILabel *labelAccuracy;
 @property (nonatomic, retain) NSDateFormatter *dateFormatter;
@@ -80,6 +80,9 @@
     self.labelDeltaLat = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
     [self.view addSubview:self.labelDeltaLat];
     y += self.labelDeltaLat.frame.size.height;
+    self.labelDeltaLatD = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    [self.view addSubview:self.labelDeltaLatD];
+    y += self.labelDeltaLatD.frame.size.height;
     self.labelDeltaLatM = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
     [self.view addSubview:self.labelDeltaLatM];
     y += self.labelDeltaLatM.frame.size.height;
@@ -97,6 +100,9 @@
     self.labelDeltaLon = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
     [self.view addSubview:self.labelDeltaLon];
     y += self.labelDeltaLon.frame.size.height;
+    self.labelDeltaLonD = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    [self.view addSubview:self.labelDeltaLonD];
+    y += self.labelDeltaLonD.frame.size.height;
     self.labelDeltaLonM = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
     [self.view addSubview:self.labelDeltaLonM];
     y += self.labelDeltaLonM.frame.size.height;
@@ -160,28 +166,30 @@
 {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         self.labelClock.text = [NSString stringWithFormat:@"Last update: %@", [self.dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:time(NULL)]]];
-        self.labelAccuracy.text = [NSString stringWithFormat:@"Accuracy: %0.10f meters", self.horizontalAccuracy];
+        self.labelAccuracy.text = [NSString stringWithFormat:@"Accuracy: %0.3f meters", self.horizontalAccuracy];
 
-        self.labelLat.text = [NSString stringWithFormat:@"Lat: %0.10f degrees", self.lat];
-        self.labelMinLat.text = [NSString stringWithFormat:@"minLat: %0.10f degrees", self.minLat];
-        self.labelMaxLat.text = [NSString stringWithFormat:@"maxLat: %0.10f degrees", self.maxLat];
-        self.labelDeltaLat.text = [NSString stringWithFormat:@"DeltaLat: %0.10f degrees", self.deltaLat];
-        self.labelDeltaLatM.text = [NSString stringWithFormat:@"DeltaLat: %0.10f meters",
+        self.labelLat.text = [NSString stringWithFormat:@"Lat: %0.10f °", self.lat];
+        self.labelMinLat.text = [NSString stringWithFormat:@"min: %0.10f °", self.minLat];
+        self.labelMaxLat.text = [NSString stringWithFormat:@"max: %0.10f °", self.maxLat];
+        self.labelDeltaLat.text = [NSString stringWithFormat:@"Δ: %0.10f °", self.deltaLat];
+        self.labelDeltaLatD.text = [NSString stringWithFormat:@"Δ: %@", [Tools coordinate:self.deltaLat]];
+        self.labelDeltaLatM.text = [NSString stringWithFormat:@"Δ: %0.3f meters",
                                     [Tools coordinates2distance:CLLocationCoordinate2DMake(self.minLat, self.minLon)
                                                              to:CLLocationCoordinate2DMake(self.maxLat, self.minLon)]];
 
-        self.labelLon.text = [NSString stringWithFormat:@"Lon: %0.10f degrees", self.lon];
-        self.labelMinLon.text = [NSString stringWithFormat:@"minLon: %0.10f degrees", self.minLon];
-        self.labelMaxLon.text = [NSString stringWithFormat:@"maxLon: %0.10f degrees", self.maxLon];
-        self.labelDeltaLon.text = [NSString stringWithFormat:@"DeltaLon: %0.10f degrees", self.deltaLon];
-        self.labelDeltaLonM.text = [NSString stringWithFormat:@"DeltaLon: %0.10f meters",
+        self.labelLon.text = [NSString stringWithFormat:@"Lon: %0.10f °", self.lon];
+        self.labelMinLon.text = [NSString stringWithFormat:@"min: %0.10f °", self.minLon];
+        self.labelMaxLon.text = [NSString stringWithFormat:@"max: %0.10f °", self.maxLon];
+        self.labelDeltaLon.text = [NSString stringWithFormat:@"Δ: %0.10f °", self.deltaLon];
+        self.labelDeltaLonD.text = [NSString stringWithFormat:@"Δ: %@", [Tools coordinate:self.deltaLon]];
+        self.labelDeltaLonM.text = [NSString stringWithFormat:@"Δ: %0.3f meters",
                                     [Tools coordinates2distance:CLLocationCoordinate2DMake(self.minLat, self.minLon)
                                                              to:CLLocationCoordinate2DMake(self.minLat, self.maxLon)]];
 
-        self.labelH.text = [NSString stringWithFormat:@"Height: %f meters", self.h];
-        self.labelMinH.text = [NSString stringWithFormat:@"minHeight: %f meters", self.minH];
-        self.labelMaxH.text = [NSString stringWithFormat:@"maxHeight: %f meters", self.maxH];
-        self.labelDeltaH.text = [NSString stringWithFormat:@"DeltaHeight: %f meters", self.deltaH];
+        self.labelH.text = [NSString stringWithFormat:@"Height: %0.3f meters", self.h];
+        self.labelMinH.text = [NSString stringWithFormat:@"min: %0.3f meters", self.minH];
+        self.labelMaxH.text = [NSString stringWithFormat:@"max: %0.3f meters", self.maxH];
+        self.labelDeltaH.text = [NSString stringWithFormat:@"Δ: %0.3f meters", self.deltaH];
     }];
 }
 
