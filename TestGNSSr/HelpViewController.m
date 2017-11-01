@@ -21,10 +21,11 @@
     sv.backgroundColor = [UIColor whiteColor];
     self.view = sv;
 
-    CGRect frame = [[UIScreen mainScreen] bounds];
-    NSInteger width = frame.size.width - 20;
-    NSInteger y = 20;
     UILabel *l;
+
+    CGRect frame = [self viewFrame];
+    NSInteger width = [self viewWidth] - 20;
+    NSInteger y = frame.origin.y;
 
     l = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width - 20, 0)];
     l.text = @"TestGNSSr:\n\n"
@@ -86,9 +87,7 @@
     [l sizeToFit];
     [self.view addSubview:l];
     y += l.frame.size.height;
-    y += 20;
 
-    y += 20;
     sv.contentSize = CGSizeMake(width, y);
     [self.view sizeToFit];
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2017 Edwin Groothuis. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UIViewController+SomeStuff.h"
 
 @interface HelpViewController : UIViewController
 

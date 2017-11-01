@@ -16,12 +16,15 @@
 @property (nonatomic, retain) UILabel *labelClock, *labelMaxCount, *labelMaxCountLast;
 @property (nonatomic, retain) UILabel *labelDeltaX, *labelDeltaY;
 @property (nonatomic, retain) UILabel *labelDistancePrevious;
+@property (nonatomic, retain) UILabel *labelTextFluctuation, *labelTextDistancePrevious;
+@property (nonatomic, retain) UIButton *buttonRestart;
 @property (nonatomic, retain) UIImageView *imageView;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) NSMutableArray<Coordinate *> *coords;
 @property (nonatomic        ) NSInteger width, maxCount, maxCountLast;
 @property (nonatomic        ) CLLocationDegrees minLat, minLon, maxLat, maxLon;
 @property (nonatomic, retain) Coordinate *lastCoord, *prevCoord;
+@property (nonatomic        ) BOOL running;
 
 @end
 
@@ -34,6 +37,8 @@
     [self valuesRestart];
     [tools addDelegate:self];
 
+    self.running = NO;
+
     return self;
 }
 
@@ -42,63 +47,91 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
 
-    CGRect frame = [[UIScreen mainScreen] bounds];
-    self.width = frame.size.width - 20;
-    NSInteger y = 20;
-
-    UILabel *label;
 
     NSTimeZone *tz = [NSTimeZone localTimeZone];
     self.dateFormatter = [[NSDateFormatter alloc] init];
     self.dateFormatter.dateFormat = @"HH:mm:ss";
     self.dateFormatter.timeZone = tz;
 
-    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, y, self.width, self.width)];
+    self.imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:self.imageView];
-    y += self.imageView.frame.size.height;
-    y += 20;
 
-    UIButton *b = [UIButton buttonWithType:UIButtonTypeSystem];
-    [b setTitle:@"Restart" forState:UIControlStateNormal];
-    [b addTarget:self action:@selector(valuesRestart) forControlEvents:UIControlEventTouchDown];
-    b.frame = CGRectMake(10, y, self.width, 20);
-    [self.view addSubview:b];
-    y += b.frame.size.height;
-    y += 20;
+    self.buttonRestart = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.buttonRestart setTitle:@"Restart" forState:UIControlStateNormal];
+    [self.buttonRestart addTarget:self action:@selector(valuesRestart) forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:self.buttonRestart];
 
-    self.labelClock = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
-    [self.view addSubview:self.labelClock];
-    y += self.labelClock.frame.size.height;
-    self.labelMaxCount = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
-    [self.view addSubview:self.labelMaxCount];
-    y += self.labelMaxCount.frame.size.height;
-    self.labelMaxCountLast = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
-    [self.view addSubview:self.labelMaxCountLast];
-    y += self.labelMaxCountLast.frame.size.height;
-    y += 20;
+#define LABEL(__var__) \
+    __var__ = [[UILabel alloc] initWithFrame:CGRectZero]; \
+    __var__.text = @"|"; \
+    [self.view addSubview:__var__];
 
-    label = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
-    label.text = @"Fluctuation:";
-    [self.view addSubview:label];
-    y += label.frame.size.height;
-    self.labelDeltaX = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
-    [self.view addSubview:self.labelDeltaX];
-    y += self.labelDeltaX.frame.size.height;
-    self.labelDeltaY = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
-    [self.view addSubview:self.labelDeltaY];
-    y += self.labelDeltaY.frame.size.height;
-    y += 20;
+    LABEL(self.labelClock);
+    LABEL(self.labelMaxCount);
+    LABEL(self.labelMaxCountLast);
 
-    label = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
-    label.text = @"Distance to previous spot:";
-    [self.view addSubview:label];
-    y += label.frame.size.height;
-    self.labelDistancePrevious = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
-    [self.view addSubview:self.labelDistancePrevious];
-    y += self.labelDistancePrevious.frame.size.height;
-    y += 20;
+    LABEL(self.labelTextFluctuation);
+    LABEL(self.labelDeltaX);
+    LABEL(self.labelDeltaY);
+    self.labelTextFluctuation.text = @"Fluctuation:";
+
+    LABEL(self.labelTextDistancePrevious);
+    LABEL(self.labelDistancePrevious);
+    self.labelTextDistancePrevious.text = @"Distance to previous spot:";
 
     [tools addDelegate:self];
+}
+
+- (NSInteger)placeLayouts
+{
+    CGRect frame = [self viewFrame];
+    self.width = [self viewWidth];
+    NSInteger y = frame.origin.y;
+
+    CGSize size;
+
+    self.imageView.frame = CGRectMake(10, y, self.width - 20, self.width);
+    y += self.imageView.frame.size.height;
+
+    self.buttonRestart.frame = CGRectMake(10, y, self.width - 20, 20);
+    y += self.buttonRestart.frame.size.height;
+
+#define SIZE(__var__) \
+    size = [__var__ sizeThatFits:CGSizeMake(self.width - 20, 0)]; \
+    __var__.frame = CGRectMake(10, y, self.width - 20, size.height); \
+    y += __var__.frame.size.height;
+
+    SIZE(self.labelClock)
+    SIZE(self.labelMaxCount)
+    SIZE(self.labelMaxCountLast)
+    y += self.labelMaxCountLast.font.lineHeight;
+
+    SIZE(self.labelTextFluctuation)
+    SIZE(self.labelDeltaX)
+    SIZE(self.labelDeltaY)
+    y += self.labelDeltaY.font.lineHeight;
+
+    SIZE(self.labelTextDistancePrevious)
+    SIZE(self.labelDistancePrevious)
+
+    return y;
+}
+
+- (void)resizeLabels
+{
+    NSInteger y = [self placeLayouts];
+
+    while (y > [self viewHeight]) {
+        UIFont *f = [self.labelClock.font fontWithSize:self.labelClock.font.pointSize - 1];
+        [self.view.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull v, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([v isKindOfClass:[UILabel class]] == YES) {
+                UILabel *l = (UILabel *)v;
+                l.font = f;
+            }
+        }];
+
+        y = [self placeLayouts];
+    };
 }
 
 - (void)valuesRestart
@@ -117,7 +150,12 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self performSelectorInBackground:@selector(showIntervalled) withObject:nil];
+    [self resizeLabels];
+
+    if (self.running == NO) {
+        self.running = YES;
+        [self performSelectorInBackground:@selector(showIntervalled) withObject:nil];
+    }
 }
 
 - (void)didUpdateLocation:(CLLocation *)location
@@ -175,7 +213,8 @@
 
 #define xx(__f__) MARGINX + X * (__f__) / SIZEX
 #define yy(__f__) MARGINY + Y * (__f__) / SIZEY
-#define VALUEXY values[x * SIZEY + y]
+#define VALUEXY VALUEXY_(x, y)
+#define VALUEXY_(__x__, __y__) values[__x__ + SIZEX * __y__]
 
             UIGraphicsBeginImageContextWithOptions(CGSizeMake(2 * MARGINX + X, 2 * MARGINY + Y), NO, 0);
             CGContextRef context = UIGraphicsGetCurrentContext();
@@ -190,7 +229,7 @@
             NSInteger lastX = 0, lastY = 0;
             @synchronized(self.coords) {
                 NSEnumerator *e = [self.coords objectEnumerator];
-                // Place the
+                // Place the coordinates
                 while ((c = [e nextObject]) != nil) {
                     NSInteger x = (SIZEX - 1) * (c.lon - minLon) / deltaX;
                     NSInteger y = (SIZEY - 1) * (c.lat - minLat) / deltaY;
@@ -215,19 +254,24 @@
                     if (VALUEXY == 0)
                         continue;
                     CGContextSetFillColorWithColor(context, [[self valueToHeatColour:logf(1.0 * VALUEXY) / logf(maxValue)] CGColor]);
-                    CGContextFillRect(context, CGRectMake(xx(x) - 3, yy(y) - 3, 6, 6));
+                    float radius = 5 * logf(1.0 * VALUEXY);
+                    CGContextFillRect(context, CGRectMake(xx(x) - radius / 2, yy(y) - radius / 2, radius, radius));
                 }
             }
+
+            // legend at the top left
             for (NSInteger x = 0; x < 100; x++) {
                 CGContextSetFillColorWithColor(context, [[self valueToHeatColour:x / 100.0] CGColor]);
                 CGContextFillRect(context, CGRectMake(2 * xx(x), yy(10), 2, 5));
             }
+
+            float radius = 5 * logf(1.0 * VALUEXY_(lastX, lastY));
             CGContextSetStrokeColorWithColor(context, [[UIColor whiteColor] CGColor]);
-            CGContextMoveToPoint(context, xx(lastX) - 2, yy(lastY) - 2);
-            CGContextAddLineToPoint(context, xx(lastX) + 2, yy(lastY) + 2);
+            CGContextMoveToPoint(context, xx(lastX) - radius / 2, yy(lastY) - radius / 2);
+            CGContextAddLineToPoint(context, xx(lastX) + radius / 2, yy(lastY) + radius / 2);
             CGContextStrokePath(context);
-            CGContextMoveToPoint(context, xx(lastX) + 2, yy(lastY) - 2);
-            CGContextAddLineToPoint(context, xx(lastX) - 2, yy(lastY) + 2);
+            CGContextMoveToPoint(context, xx(lastX) + radius / 2, yy(lastY) - radius / 2);
+            CGContextAddLineToPoint(context, xx(lastX) - radius / 2, yy(lastY) + radius / 2);
             CGContextStrokePath(context);
 
             // Make an image
@@ -253,8 +297,8 @@
             self.imageView.image = self.image;
         }
         self.labelClock.text = [NSString stringWithFormat:@"Last update: %@", [self.dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:time(NULL)]]];
-        self.labelMaxCount.text = [NSString stringWithFormat:@"Max count in coordinates: %ld", self.maxCount];
-        self.labelMaxCountLast.text = [NSString stringWithFormat:@"Count in last coordinate: %ld", self.maxCountLast];
+        self.labelMaxCount.text = [NSString stringWithFormat:@"Max count in coordinates: %ld", (long)self.maxCount];
+        self.labelMaxCountLast.text = [NSString stringWithFormat:@"Count in last coordinate: %ld", (long)self.maxCountLast];
         self.labelDeltaX.text = [NSString stringWithFormat:@"ΔX: %0.3f meters",
             [Tools coordinates2distance:CLLocationCoordinate2DMake(self.minLat, self.minLon)
                                      to:CLLocationCoordinate2DMake(self.minLat, self.maxLon)]];
@@ -264,7 +308,6 @@
         self.labelDistancePrevious.text = [NSString stringWithFormat:@"Distance %0.3f meters",
                                            [Tools coordinates2distance:CLLocationCoordinate2DMake(self.lastCoord.lat, self.lastCoord.lon)
                                                                     to:CLLocationCoordinate2DMake(self.prevCoord.lat, self.prevCoord.lon)]];
-
     }];
 }
 

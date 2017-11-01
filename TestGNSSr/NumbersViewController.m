@@ -21,6 +21,7 @@
 @property (nonatomic        ) CLLocationDegrees lat, minLat, maxLat, deltaLat;
 @property (nonatomic        ) CLLocationDistance lon, minLon, maxLon, deltaLon;
 @property (nonatomic        ) CLLocationDistance horizontalAccuracy;
+@property (nonatomic        ) NSInteger width;
 
 @end
 
@@ -37,73 +38,73 @@
     self.dateFormatter.dateFormat = @"HH:mm:ss";
     self.dateFormatter.timeZone = tz;
 
-    CGRect frame = [[UIScreen mainScreen] bounds];
-    NSInteger width = frame.size.width - 20;
-    NSInteger y = 20;
+    CGRect frame = [self viewFrame];
+    self.width = [self viewWidth];
+    NSInteger y = frame.origin.y;
 
-    self.labelClock = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelClock = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelClock];
     y += self.labelClock.frame.size.height;
-    self.labelStart = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelStart = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelStart];
     y += self.labelStart.frame.size.height;
     y += 20;
 
-    self.labelAccuracy = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelAccuracy = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelAccuracy];
     y += self.labelAccuracy.frame.size.height;
     y += 20;
 
-    self.labelH = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelH = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelH];
     y += self.labelH.frame.size.height;
-    self.labelMinH = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelMinH = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelMinH];
     y += self.labelMinH.frame.size.height;
-    self.labelMaxH = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelMaxH = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelMaxH];
     y += self.labelMaxH.frame.size.height;
-    self.labelDeltaH = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelDeltaH = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelDeltaH];
     y += self.labelDeltaH.frame.size.height;
     y += 20;
 
-    self.labelLat = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelLat = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelLat];
     y += self.labelLat.frame.size.height;
-    self.labelMinLat = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelMinLat = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelMinLat];
     y += self.labelMinLat.frame.size.height;
-    self.labelMaxLat = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelMaxLat = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelMaxLat];
     y += self.labelMaxLat.frame.size.height;
-    self.labelDeltaLat = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelDeltaLat = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelDeltaLat];
     y += self.labelDeltaLat.frame.size.height;
-    self.labelDeltaLatD = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelDeltaLatD = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelDeltaLatD];
     y += self.labelDeltaLatD.frame.size.height;
-    self.labelDeltaLatM = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelDeltaLatM = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelDeltaLatM];
     y += self.labelDeltaLatM.frame.size.height;
     y += 20;
 
-    self.labelLon = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelLon = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelLon];
     y += self.labelLon.frame.size.height;
-    self.labelMinLon = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelMinLon = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelMinLon];
     y += self.labelMinLon.frame.size.height;
-    self.labelMaxLon = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelMaxLon = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelMaxLon];
     y += self.labelMaxLon.frame.size.height;
-    self.labelDeltaLon = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelDeltaLon = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelDeltaLon];
     y += self.labelDeltaLon.frame.size.height;
-    self.labelDeltaLonD = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelDeltaLonD = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelDeltaLonD];
     y += self.labelDeltaLonD.frame.size.height;
-    self.labelDeltaLonM = [[UILabel alloc] initWithFrame:CGRectMake(10, y, width, 20)];
+    self.labelDeltaLonM = [[UILabel alloc] initWithFrame:CGRectMake(10, y, self.width, 20)];
     [self.view addSubview:self.labelDeltaLonM];
     y += self.labelDeltaLonM.frame.size.height;
     y += 20;
@@ -111,7 +112,7 @@
     UIButton *b = [UIButton buttonWithType:UIButtonTypeSystem];
     [b setTitle:@"Restart" forState:UIControlStateNormal];
     [b addTarget:self action:@selector(valuesRestart) forControlEvents:UIControlEventTouchDown];
-    b.frame = CGRectMake(10, y, width, 20);
+    b.frame = CGRectMake(10, y, self.width, 20);
     [self.view addSubview:b];
     y += b.frame.size.height;
     y += 20;
