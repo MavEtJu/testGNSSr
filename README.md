@@ -6,6 +6,10 @@ important to know how good or bad the received signal is.
 This app will provide you with the reported coordinates and the
 historic statistics.
 
+See http://ios.me/app/1303544506/chart-your-gnssr for the app in
+the AppStore.
+
+
 The idea for this app came after this Facebook post:
 
 Try this thought experiment: Attach your GPS receiver to a tripod.
